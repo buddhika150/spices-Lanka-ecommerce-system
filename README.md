@@ -1,2 +1,2 @@
 # spices-Lanka-ecommerce-system
-Spices Lanka E-Commerce Website MINI Project 
+Spices Lanka E-Commerce Website is a mini project focused on designing and developing an online e-commerce platform for Sri Lankan spices and related products. The system is designed to provide customers with a convenient and user-friendly platform to browse products, view product details, manage their shopping cart, place orders, and complete the checkout process. This project includes system design, user interface wireframes, database design, ER and relational mapping diagrams, and the overall e-commerce workflow.
