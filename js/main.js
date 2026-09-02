@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Load Header
-  fetch("components/header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-    });
+    console.log("Spices Lanka script loaded.");
 
-  // Load Footer
-  fetch("components/footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            tabBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+        });
     });
 });
