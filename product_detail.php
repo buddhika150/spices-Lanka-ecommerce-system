@@ -69,18 +69,33 @@ if ($product_id > 0 && isset($conn) && $conn instanceof mysqli) {
                         ✓ In stock (<?= isset($product['Stock_Quantity']) ? $product['Stock_Quantity'] : 20; ?> units available)
                     </div>
 
-                    <form action="cart.php" method="POST">
-                        <input type="hidden" name="product_id" value="<?= $product['Product_ID']; ?>">
-                        <div class="quantity-box">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" value="1" min="1">
-                        </div>
+                    <!-- JavaScript Cart System සඳහා සකස් කළ Form එක -->
+                    <div class="quantity-box">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                    </div>
 
-                        <div class="action-btns">
-                            <button type="submit" name="add_to_cart" class="btn-add-cart">Add to Cart</button>
-                            <button type="submit" name="buy_now" class="btn-buy-now">Buy Now</button>
-                        </div>
-                    </form>
+                    <div class="action-btns">
+                        <button type="button" class="btn-add-cart" 
+                                onclick="addToCart(
+                                    <?= $product['Product_ID']; ?>, 
+                                    '<?= htmlspecialchars($product['Product_Name'], ENT_QUOTES); ?>', 
+                                    <?= $product['Price']; ?>, 
+                                    '<?= htmlspecialchars($product['Image'], ENT_QUOTES); ?>'
+                                )">
+                            Add to Cart
+                        </button>
+                        
+                        <a href="cart.php" class="btn-buy-now" style="text-align:center; text-decoration:none;"
+                           onclick="addToCart(
+                               <?= $product['Product_ID']; ?>, 
+                               '<?= htmlspecialchars($product['Product_Name'], ENT_QUOTES); ?>', 
+                               <?= $product['Price']; ?>, 
+                               '<?= htmlspecialchars($product['Image'], ENT_QUOTES); ?>'
+                           )">
+                            Buy Now
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -108,5 +123,7 @@ if ($product_id > 0 && isset($conn) && $conn instanceof mysqli) {
     <?php include 'components/footer.php'; ?>
 
     <script src="js/main.js"></script>
+    <!-- Cart Logic සඳහා cart.js ගොනුව සම්බන්ධ කර ඇත -->
+    <script src="js/cart.js"></script>
 </body>
 </html>
