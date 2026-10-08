@@ -12,8 +12,7 @@ $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 $category = isset($_GET['category']) ? trim($_GET['category']) : '';
 $max_price = isset($_GET['max_price']) ? floatval($_GET['max_price']) : 5000;
 
-$sql = "SELECT * FROM PRODUCT WHERE Price <= ?";
-$params = [$max_price];
+$sql = "SELECT * FROM product WHERE is_active = 1 AND Price <= ?";$params = [$max_price];
 $types = "d";
 
 if (!empty($search)) {

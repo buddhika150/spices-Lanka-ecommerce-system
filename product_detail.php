@@ -69,7 +69,7 @@ if ($product_id > 0 && isset($conn) && $conn instanceof mysqli) {
                         ✓ In stock (<?= isset($product['Stock_Quantity']) ? $product['Stock_Quantity'] : 20; ?> units available)
                     </div>
 
-                    <!-- JavaScript Cart System සඳහා සකස් කළ Form එක -->
+                     
                     <div class="quantity-box">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1">

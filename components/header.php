@@ -31,7 +31,10 @@ $current_currency = $_SESSION['currency'] ?? 'LKR';
             <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
             <a href="index.php" class="<?= $current_page == 'index.php' ? 'active' : ''; ?>">Home</a>
             <a href="shop.php" class="<?= $current_page == 'shop.php' ? 'active' : ''; ?>">Shop</a>
-            <a href="shop.php">Categories</a>
+            <a href="categories.php"
+   class="<?= $current_page == 'categories.php' ? 'active' : ''; ?>">
+    Categories
+</a>
             <a href="about.php" class="<?= $current_page == 'about.php' ? 'active' : ''; ?>">About Us</a>
             <a href="contact.php" class="<?= $current_page == 'contact.php' ? 'active' : ''; ?>">Contact Us</a>
         </nav>
